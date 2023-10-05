@@ -6,7 +6,7 @@ export default function ArticleOverview() {
     const [posts, setPosts] = useState([])
     const [isLoading, setIsLoading] = useState(false)
     const [error, setError] = useState(false)
-const [deleted, setDelete] = useState(false)
+    const [deleted, setDelete] = useState(false)
 
     useEffect(() => {
         const abortController = new AbortController();
@@ -16,7 +16,7 @@ const [deleted, setDelete] = useState(false)
             getPosts(abortController, setPosts, setIsLoading)
     },1000)
 
-
+        //clean up function
         return () => {
             console.log("cleanup")
             setError(false)

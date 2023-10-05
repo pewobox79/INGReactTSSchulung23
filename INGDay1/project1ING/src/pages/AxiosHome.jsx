@@ -11,6 +11,8 @@ export default function AxiosHome() {
             <AxiosButton title="Delete Post"  requestType="delete" />
             <AxiosButton title="Put Post"  requestType="put" />
             <AxiosButton title="Patch Post"  requestType="patch" />
+            <AxiosButton title="Get All Data" requestType="all"/>
+            <AxiosButton title="error handling" requestType="err"/>
 
 
         </div>

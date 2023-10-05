@@ -1,9 +1,11 @@
 import Button from '@mui/material/Button';
-import { getPosts, addNewPost, putPost,patchPost, deletePost } from '../services/axiosRequests/axios';
+import { getPosts, addNewPost, putPost,patchPost, deletePost, getAllData, errorHandling } from '../services/axiosRequests/axios';
+
 
 export default function AxiosButton({ requestType, title }) {
 
     function handleAxiosRequest() {
+    
         switch (requestType) {
             case "post":
                 addNewPost()
@@ -17,6 +19,12 @@ export default function AxiosButton({ requestType, title }) {
             case "patch":
                 patchPost()
                 break;
+            case "all":
+                getAllData()
+                break;
+            case "err":
+                errorHandling()
+                break;
             case "get":
             default: getPosts()
         }
@@ -24,7 +32,6 @@ export default function AxiosButton({ requestType, title }) {
     }
 
     return (
-
         <Button onClick={handleAxiosRequest}>{title}</Button>
 
 
